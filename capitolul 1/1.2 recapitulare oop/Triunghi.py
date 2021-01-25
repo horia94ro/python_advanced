@@ -5,7 +5,6 @@ class Triunghi:
         self.inaltime = inaltime
 
     def calculeaza_arie(self):
-        "Vom considera latura 3 ca fiind baza in cazul de fata"
         arie = self.baza * self.inaltime / 2
         return arie
 
