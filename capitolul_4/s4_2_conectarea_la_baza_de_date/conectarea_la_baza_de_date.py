@@ -7,7 +7,7 @@ try:
                                  port = 3306) #dacă portul folosi este cel default acest argument poate lipsi
                                  #totuși daca folosim altă valoare pentru port (ex: 33066) - ea trebuie specificată explicit
     my_cursor = conex.cursor()
-    my_cursor.execute("CREATE DATABASE biblioteca2;")
+    my_cursor.execute("DROP DATABASE biblioteca2;")
     my_cursor.execute("SHOW DATABASES")
     for current_db in my_cursor:
         print(current_db)

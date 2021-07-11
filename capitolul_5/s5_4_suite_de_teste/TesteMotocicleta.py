@@ -1,4 +1,4 @@
-from capitolul_5.s5_5_suite_de_teste.Motocicleta import Motocicleta
+from capitolul_5.s5_4_suite_de_teste.Motocicleta import Motocicleta
 import unittest
 
 

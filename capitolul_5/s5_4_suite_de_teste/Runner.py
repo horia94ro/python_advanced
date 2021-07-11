@@ -1,6 +1,6 @@
 import unittest
-from capitolul_5.s5_5_suite_de_teste.TesteMasina import TesteMasina
-from capitolul_5.s5_5_suite_de_teste.TesteMotocicleta import TesteMotocicleta
+from capitolul_5.s5_4_suite_de_teste.TesteMasina import TesteMasina
+from capitolul_5.s5_4_suite_de_teste.TesteMotocicleta import TesteMotocicleta
 
 #Definim doua instanțe de TestLoader - câte una pentru fiecare clasă de teste
 loader_masina = unittest.TestLoader()

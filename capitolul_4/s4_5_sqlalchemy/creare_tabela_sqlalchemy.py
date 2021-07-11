@@ -21,4 +21,5 @@ class Doctor(Base):
     #Folosirea lui __repr__ nu este obligatorie, dar vom vrea să avem un format frumos al datelor atunci când sunt
     #extrase din baza de date
 
+print(Base.metadata.create_all(engine))
 
