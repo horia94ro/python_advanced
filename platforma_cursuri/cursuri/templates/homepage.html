@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Platforma cursuri</title>
+</head>
+<body>
+{% load static %}
+<img src = "{% static 'cursuri/logo.png' %}" width="250" height="150">
+
+<h1>Platforma de cursuri</h1>
+<a href = "http://127.0.0.1:8000/blog">Blogul nostru</a>
+{% for curs in cursuri%}
+    <h2>{{curs.nume}}</h2>
+    <p>{{curs.descriere}}</p>
+    <img src = {{curs.imagine.url}} height="250" width="250">
+    <br>
+<!-- Pentru imagine a trebuit să ne folosim de URL-ul unde aceasta este salvată. I-am dat de asemenea
+ o dimensiune fixă pentru a nu avea afișat ceva ce ar deforma pagina în sine.-->
+{% if curs.url%}
+    <a href = {{curs.url}}>Mai multe informatii</a>
+{% endif %}
+{% endfor %}
+</body>
+</html>

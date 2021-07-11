@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+{% for articol in articole%}
+    <h2>{{articol.titlu}}</h2>
+    <p>{{articol.autor}}</p>
+    <p>{{articol.continut}}</p>
+    <p>{{articol.data_publicare}}</p>
+{% endfor %}
+</body>
+</html>
