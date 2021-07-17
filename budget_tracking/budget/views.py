@@ -1,25 +1,18 @@
 from django.shortcuts import render, redirect
 from .models import Cheltuiala, Incasare
-
+from datetime import date
 
 def homepage(request):
-    buget_curent = calculeaza_buget()
-    lista_cheltuieli = []
-    lista_incasari = []
     cheltuieli = Cheltuiala.objects.all().order_by('-data_inregistrare')
     incasari = Incasare.objects.all().order_by('-data_inregistrare')
-    for cheltuiala in cheltuieli:
-        inreg = {"data_inregistrare": cheltuiala.data_inregistrare, "valoare": cheltuiala.valoare}
-        lista_cheltuieli.append(inreg)
-    for incasare in incasari:
-        inreg = {"data_inregistrare": incasare.data_inregistrare, "valoare": incasare.valoare}
-        lista_incasari.append(inreg)
+    buget_curent = calculeaza_buget(cheltuieli, incasari)
     return render(request, "homepage.html",
-                  {"cheltuieli": lista_cheltuieli, "incasari": lista_incasari, "buget": buget_curent})
+                  {"cheltuieli": cheltuieli, "incasari": incasari, "buget": buget_curent})
 
 
 def operatie_noua(request):
-    return render(request, "operatie_noua.html")
+    data_curenta = str(date.today())
+    return render(request, "operatie_noua.html", {"data_curenta": data_curenta})
 
 
 def inregistreaza_operatie(request):
@@ -34,11 +27,9 @@ def inregistreaza_operatie(request):
     return redirect("/")
 
 
-def calculeaza_buget():
+def calculeaza_buget(cheltuieli, incasari):
     total_incasari = 0
     total_cheltuieli = 0
-    cheltuieli = Cheltuiala.objects.all()
-    incasari = Incasare.objects.all()
     for cheltuiala in cheltuieli:
         total_cheltuieli += cheltuiala.valoare
     for incasare in incasari:
