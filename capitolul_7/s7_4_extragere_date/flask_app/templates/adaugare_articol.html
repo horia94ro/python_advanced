@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{titlu}}</title>
+</head>
+<body>
+<a href="/">Homepage</a>
+<a href="/adauga_autor">Adauga un nou autor</a>
+<h3>Veti adauga articolul cu numarul: {{nr_articolului}}</h3>
+    <form method="POST" action="/adauga_articol">
+          <label>Titlu:</label><br>
+          <input required type="text" name="titlu" placeholder="Articol nou..."><br>
+          <label>Autor:</label><br>
+          <select required name="autor">
+              {% for autor in autori %}
+                    <option value = "{{autor}}">{{autor}}</option>
+              {% endfor %}
+          </select><br><br>
+          <label>Data adaugare:</label><br><br>
+          <input required type="date" value="{{data_curenta}}" name = "data_articol"><br><br>
+          <label>Continutul articolului:</label><br><br>
+           <textarea name = "continut" rows="4" cols="50"></textarea><br><br>
+          <input type="submit" value="Adauga articol">
+    </form>
+</body>
+</html>

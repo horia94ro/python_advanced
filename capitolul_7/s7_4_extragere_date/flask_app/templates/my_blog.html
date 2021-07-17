@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    Ne folosim de cheia de titlu din care extragem noul nume al paginii-->
+    <title>{{titlu}}</title>
+</head>
+<body>
+<a href="/adauga_articol">Adauga un nou articol</a>
+<a href="/adauga_autor">Adauga un nou autor</a>
+<h1>Bine ati venit pe pagina mea de blog!</h1>
+<!--Folosind o structură de FOR vom itera prin lista pusă la dispoziție de cheia articole-->
+
+{% for articol in articole%}
+    <h2>{{articol.titlu}}</h2>
+    <p>Adaugat la data de {{articol.data_adaugare}} de catre {{articol.autor}}</p>
+    <p>{{articol.continut}}</p>
+{% endfor %}
+</body>
+</html>
