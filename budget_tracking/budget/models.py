@@ -1,9 +1,11 @@
 from django.db import models
 
+
 class Cheltuiala(models.Model):
-    data_inregistrare = models.CharField(max_length=100)
-    valoare = models.IntegerField()
+    data_inregistrare = models.DateField()
+    valoare = models.FloatField()
+
 
 class Incasare(models.Model):
-    data_inregistrare = models.CharField(max_length=100)
-    valoare = models.IntegerField()
+    data_inregistrare = models.DateField()
+    valoare = models.FloatField()
