@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Cheltuiala, Incasare
 
-# Register your models here.
+admin.site.register(Cheltuiala)
+admin.site.register(Incasare)
