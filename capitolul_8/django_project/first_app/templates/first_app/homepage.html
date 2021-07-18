@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generare nume animale</title>
+</head>
+<body>
+<form action = "nume_animale">
+    <select name = "tip_animal">
+    <!-- select ne va da un drop-down în timp ce atributul name ne va spune ce reprezintă această valoare-->
+        <option value = "catel">Catel</option>
+    <!-- Opțiunile pe care le dorim afișate în drop-down vor fi introduse cu tag-ul de option
+    Pe fiecare tag în parte vom adăuga și un atribut value - corespunzător valorii concrete ce va trimisă de pagină
+    Valoarea afișată în meniu nu trebuie neaparată să fie egală cu cea din value -->
+        <option value = "pisica">Pisica</option>
+    </select>
+<br>
+    <input type="checkbox" name = "fioros">Animal fioros?
+<br>
+    <select name = "mascul_femela">
+        <option value = "male">M</option>
+        <option value = "female">F</option>
+    </select>
+<br>
+<br>
+    <!-- Am adăugat tag-uri br pentru a avea o spațiere a datelor introduse--->
+    <input type = "submit" value = "Generare nume animal">
+</form>
+</body>
+</html>
